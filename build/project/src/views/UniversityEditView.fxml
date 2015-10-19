@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import usercontrols.*?>
+
+<GridPane prefHeight="500.0" prefWidth="700.0" styleClass="pane"
+	xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.UniversityEditController">
+	<columnConstraints>
+		<ColumnConstraints prefWidth="200.0" />
+		<ColumnConstraints hgrow="ALWAYS" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints prefHeight="50.0" vgrow="never" />
+		<RowConstraints prefHeight="50.0" vgrow="never" />
+		<RowConstraints vgrow="always" />
+	</rowConstraints>
+	<children>
+		<Label text="%Name" styleClass="font-25-light-text">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="20" />
+			</GridPane.margin>
+		</Label>
+		<Label text="%Location" GridPane.rowIndex="1" styleClass="font-25-light-text">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="20" />
+			</GridPane.margin>
+		</Label>
+		<EditableTextControl fx:id="nameField"
+			GridPane.columnIndex="1">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</GridPane.margin>
+			<font>
+				<Font size="24"/>
+			</font>
+		</EditableTextControl>
+		<EditableTextControl
+			GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="locationField">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</GridPane.margin>
+			<font>
+				<Font size="24"/>
+			</font>
+		</EditableTextControl>
+		<TableView prefHeight="200.0" prefWidth="200.0" fx:id="courses"
+			GridPane.columnSpan="2" GridPane.rowIndex="2">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</GridPane.margin>
+			<columns>
+				<TableColumn prefWidth="75.0" text="%Courses" fx:id="courseNameColumn" />
+			</columns>
+			<columnResizePolicy>
+				<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+			</columnResizePolicy>
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+		</TableView>
+	</children>
+</GridPane>
+
+

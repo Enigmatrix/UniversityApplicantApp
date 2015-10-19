@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TextField?>
+
+<GridPane prefHeight="800.0" prefWidth="500.0"
+	xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.RegisterForCoursesController">
+	<children>
+		<HBox>
+			<GridPane.margin>
+				<Insets top="5" left="5" bottom="5" />
+			</GridPane.margin>
+			<TextField promptText="%Search" fx:id="searchText">
+				<font>
+					<Font size="18.0" />
+				</font>
+			</TextField>
+		</HBox>
+		<ListView GridPane.rowIndex="1" fx:id="coursesListView"
+			GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+		</ListView>
+		<ButtonBar prefHeight="40.0" prefWidth="200.0"
+			GridPane.rowIndex="2" GridPane.vgrow="NEVER">
+			<buttons>
+				<Button mnemonicParsing="false" text="%Ok" onAction="#okButtonPressed">
+					<font>
+						<Font size="18.0" />
+					</font>
+				</Button>
+				<Button mnemonicParsing="false" text="%Cancel" onAction="#cancelButtonPressed">
+					<font>
+						<Font size="18.0" />
+					</font>
+				</Button>
+			</buttons>
+		</ButtonBar>
+	</children>
+	<columnConstraints>
+		<ColumnConstraints />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints prefHeight="50.0" />
+		<RowConstraints />
+		<RowConstraints prefHeight="50.0" />
+	</rowConstraints>
+</GridPane>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="500.0" prefWidth="700.0" styleClass="pane"
+	xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.CourseDataController">
+	<columnConstraints>
+		<ColumnConstraints prefWidth="200.0" />
+		<ColumnConstraints hgrow="ALWAYS" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints prefHeight="50.0" vgrow="never" />
+		<RowConstraints prefHeight="50.0" vgrow="never" />
+		<RowConstraints vgrow="always" />
+	</rowConstraints>
+	<children>
+		<Label text="%Course_Name" styleClass="font-25-light-text">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</GridPane.margin>
+		</Label>
+		<Label text="%University" GridPane.rowIndex="1" styleClass="font-25-light-text">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</GridPane.margin>
+		</Label>
+		<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" fx:id="courseNameField"
+			GridPane.columnIndex="1" styleClass="font-25-text" stroke="WHITE">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</GridPane.margin>
+		</Text>
+		<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" styleClass="font-25-text"
+			GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="universityField" stroke="WHITE">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</GridPane.margin>
+		</Text>
+		<TableView prefHeight="200.0" prefWidth="200.0" fx:id="preRequisitesTable"
+			GridPane.columnSpan="2" GridPane.rowIndex="2">
+			<GridPane.margin>
+				<Insets bottom="10" left="10" right="10" top="10" />
+			</GridPane.margin>
+			<columns>
+				<TableColumn prefWidth="75.0" text="%Name" fx:id="preRequisiteNameColumn" />
+				<TableColumn minWidth="150.0" text="%Field" fx:id="preRequisiteFieldColumn" />
+			</columns>
+			<columnResizePolicy>
+				<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+			</columnResizePolicy>
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+		</TableView>
+	</children>
+</GridPane>

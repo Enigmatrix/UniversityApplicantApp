@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+
+<GridPane prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+	<columnConstraints>
+		<ColumnConstraints hgrow="never" />
+		<ColumnConstraints hgrow="always" />
+		<ColumnConstraints hgrow="never" />
+	</columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+   </rowConstraints>
+   <children>
+      <Button mnemonicParsing="false" text="Button" fx:id="button" GridPane.columnIndex="2" GridPane.rowSpan="2147483647" />
+      <Label text="Text" GridPane.columnIndex="1" fx:id="nameLabel" styleClass="font-25-text">
+      	<font>
+      		<Font size="25"/>
+      	</font>
+      </Label>
+      <Label text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="qualificationLabel">
+      	<font>
+      		<Font size="16"/>
+      	</font>
+      </Label>
+   </children>
+</GridPane>

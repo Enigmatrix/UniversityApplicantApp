@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40">
+	<VBox>
+		<Label fx:id="nameLabel" styleClass="big-font-text">
+			<font>
+				<Font size="35.0" />
+			</font>
+		</Label>
+		<Label fx:id="preRequisiteLabel">
+			<font>
+				<Font size="16.0" />
+			</font>
+		</Label>
+	</VBox>
+	<HBox AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0"
+		AnchorPane.topAnchor="0.0">
+		<Button text="&#xE104;" onAction="#editClicked">
+			<font>
+				<Font name="Segoe UI Symbol" size="24.0"/>
+			</font>
+		</Button>
+	</HBox>
+</AnchorPane>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import usercontrols.EditableTextControl?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.control.Button?>
+<?import com.guigarage.sdk.util.RoundImageView?>
+
+
+<AnchorPane minWidth="1000" prefHeight="500"
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40"
+	fx:controller="controllers.ApplicantController">
+	<children>
+		<GridPane AnchorPane.bottomAnchor="0.0"
+			AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+			AnchorPane.topAnchor="0.0">
+			<columnConstraints>
+				<ColumnConstraints hgrow="NEVER" minWidth="400.0"
+					maxWidth="400.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="400.0"
+					prefWidth="500.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<GridPane styleClass="pane">
+					<columnConstraints>
+						<ColumnConstraints hgrow="NEVER" minWidth="400.0"
+							maxWidth="400.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints vgrow="NEVER" />
+					</rowConstraints>
+					<children>
+						<VBox GridPane.vgrow="always">
+
+							<GridPane>
+								<columnConstraints>
+									<ColumnConstraints hgrow="SOMETIMES"
+										minWidth="10.0" />
+								</columnConstraints>
+								<rowConstraints>
+									<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+								</rowConstraints>
+								<children>
+									<RoundImageView fx:id="applicantImage"
+										defaultSize="200.0" GridPane.halignment="CENTER">
+										<GridPane.margin>
+											<Insets top="20.0" bottom="20.0" />
+										</GridPane.margin>
+									</RoundImageView>
+								</children>
+							</GridPane>
+							<VBox VBox.vgrow="NEVER" minWidth="110" prefWidth="110">
+								<EditableTextControl fx:id="nameField"
+									VBox.vgrow="NEVER" minWidth="50.0">
+									<font>
+										<Font size="32.0" />
+									</font>
+								</EditableTextControl>
+								<EditableTextControl fx:id="emailAddressField"
+									VBox.vgrow="NEVER" minWidth="30.0">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</EditableTextControl>
+								<EditableTextControl fx:id="phoneNumberField"
+									VBox.vgrow="NEVER" minWidth="30.0">
+									<font>
+										<Font size="18.0" />
+									</font>
+								</EditableTextControl>
+							</VBox>
+							<HBox VBox.vgrow="never">
+								<VBox.margin>
+									<Insets top="15.0" />
+								</VBox.margin>
+								<Label styleClass="light-text" text="%Qualifications">
+									<font>
+										<Font size="15.0" />
+									</font>
+									<HBox.margin>
+										<Insets left="10.0" top="5.0" />
+									</HBox.margin>
+								</Label>
+								<Button text="&#xE109;" onAction="#addQualification">
+									<font>
+										<Font name="Segoe UI Symbol" size="15.0" />
+									</font>
+								</Button>
+								<Button text="&#xE108;" onAction="#removeQualification">
+									<font>
+										<Font name="Segoe UI Symbol" size="15.0" />
+									</font>
+								</Button>
+							</HBox>
+
+							<TableView fx:id="qualificationsTable" styleClass="light-pane"
+								VBox.vgrow="always">
+								<VBox.margin>
+									<Insets top="10.0" left="10.0" bottom="10.0" right="10.0" />
+								</VBox.margin>
+								<columns>
+									<TableColumn text="%Name" fx:id="qualificationNameColumn" />
+									<TableColumn maxWidth="50.0" minWidth="50.0" text="%Field"
+										fx:id="qualificationFieldColumn" />
+								</columns>
+								<columnResizePolicy>
+									<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+								</columnResizePolicy>
+							</TableView>
+						</VBox>
+					</children>
+				</GridPane>
+				<GridPane styleClass="light-pane" GridPane.columnIndex="1">
+					<columnConstraints>
+						<ColumnConstraints />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" prefHeight="50.0"
+							vgrow="NEVER" />
+						<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<AnchorPane>
+							<HBox>
+								<GridPane.margin>
+									<Insets left="10" />
+								</GridPane.margin>
+								<Label styleClass="dark-text" text="%Registered_Courses">
+									<font>
+										<Font size="24.0" />
+									</font>
+								</Label>
+								<Button text="&#xE109;" onAction="#registerForCourse">
+									<HBox.margin>
+										<Insets top="5" left="5" bottom="5" right="5" />
+									</HBox.margin>
+									<font>
+										<Font name="Segoe UI Symbol" size="24.0" />
+									</font>
+								</Button>
+								<Button text="&#xE108;" onAction="#unregisterForCourse">
+									<HBox.margin>
+										<Insets top="5" bottom="5" right="5" />
+									</HBox.margin>
+									<font>
+										<Font name="Segoe UI Symbol" size="24.0" />
+									</font>
+								</Button>
+							</HBox>
+							<ButtonBar AnchorPane.rightAnchor="5"
+								AnchorPane.bottomAnchor="5" AnchorPane.topAnchor="10">
+								<buttons>
+									<Button text="%Logout" onAction="#logout" styleClass="logout-button"
+										prefWidth="150">
+									</Button>
+									<Button text="%Save" onAction="#saveData" styleClass="save-button">
+									</Button>
+								</buttons>
+
+							</ButtonBar>
+						</AnchorPane>
+						<TableView fx:id="coursesTableView" GridPane.rowIndex="1"
+							GridPane.hgrow="always" GridPane.vgrow="always">
+							<GridPane.margin>
+								<Insets top="10.0" left="10.0" right="10.0" bottom="10.0" />
+							</GridPane.margin>
+							<columns>
+								<TableColumn fx:id="acceptedColumn" text="%Accepted" />
+								<TableColumn fx:id="nameColumn" text="%Name" />
+								<TableColumn fx:id="universityColumn" text="%University" />
+								<TableColumn fx:id="preRequisiteCountColumn" text="%Prerequisite_Count" />
+							</columns>
+							<columnResizePolicy>
+								<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+							</columnResizePolicy>
+						</TableView>
+					</children>
+				</GridPane>
+			</children>
+		</GridPane>
+	</children>
+</AnchorPane>
